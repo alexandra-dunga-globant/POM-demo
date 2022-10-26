@@ -1,18 +1,10 @@
 __author__ = 'Alexandra Dunga'
 
-import pytest
-
 from Config.config import TestData
-from Pages.LoginPage import LoginPage
 from Tests.test_base import BaseTest
 
 
 class TestLogin(BaseTest):
-
-    @pytest.fixture(scope="class")
-    def setup_login_page(self):
-        loginPage = LoginPage(self.driver)
-        yield loginPage
 
     """Check if the signup link exists"""
     def test_signup_link_visible(self, setup_login_page):
