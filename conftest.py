@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 
 
-
+#lena branch2
 @pytest.fixture(params=["chrome", "firefox"], scope="class", autouse=True)
 def init_driver(request):
     if request.param == "chrome":
