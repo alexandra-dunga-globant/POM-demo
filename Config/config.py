@@ -5,10 +5,10 @@ from decouple import config
 # to run remote tests on Github actions (including passwords)
 
 class TestData:
-    CHROME_EXEC_PATH = "/Users/elena.cernopolc/Downloads/chromedriver"
-    FIREFOX_EXEC_PATH = "/Users/elena.cernopolc/Downloads/geckodriver"
-    EDGE_EXEC_PATH = "/Users/elena.cernopolc/Downloads/msedgedriver"
-    SAFARI_EXEC_PATH = "/Users/elena.cernopolc/Downloads/safaridriver"
+    CHROME_EXEC_PATH = "/Users/alexandra.dunga/Downloads/chromedriver"
+    FIREFOX_EXEC_PATH = "/Users/alexandra.dunga/Downloads/geckodriver"
+    EDGE_EXEC_PATH = "/Users/alexandra.dunga/Downloads/msedgedriver"
+    SAFARI_EXEC_PATH = "/Users/alexandra.dunga/Downloads/safaridriver"
 
     BASE_URL = "https://demoqa.com/login"
     USERNAME = config('USERNAME')
