@@ -1,7 +1,8 @@
 import pytest
 from Config.config import TestData
 from Pages.LoginPage import LoginPage
-
+# TO DO
+#place test files under folders
 
 @pytest.fixture(scope="class")
 def setup_login_page(init_driver):
