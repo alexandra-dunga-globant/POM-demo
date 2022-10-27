@@ -23,11 +23,13 @@ Running the Tests Locally
       export PASSWORD="XYZ"
 
 * Install packages and project dependencies:
-
-        cd ve-pom
+* 
         pip install -r requirements.txt
 
 * Run all tests or a certain UI test, on a given environment:
 
         pytest Tests/test_HomePage.py -v --html=./POM-demo3.html
         pytest Tests/test_LoginPage.py -v -nauto --html=./POM-demo3.html
+
+* Run 1 test pytest -k test_home_page_title
+
