@@ -20,3 +20,7 @@ class TestData:
     LOGIN_PAGE_HEADER = "Login"
     HOME_PAGE_HEADER = "Profile"
     ACCOUNT_NAME = "Alexandra"
+
+    #Books
+    BOOKS_URL = "https://demoqa.com/books"
+
