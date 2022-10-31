@@ -35,12 +35,12 @@ class LoginPage(BasePage):
     '''Used to check signup link'''
 
     def is_signup_link(self):
-        return self.is_enabled(self.SIGNUP_LINK)
+        return self.is_visible(self.SIGNUP_LINK)
 
     '''Used to login to app'''
 
     def login(self, username, password):
-        if self.is_enabled(self.LOGIN_BUTTON):
+        if self.is_visible(self.LOGIN_BUTTON):
             self.send_keys(self.EMAIL, username)
             self.send_keys(self.PASSWORD, password)
             self.click(self.LOGIN_BUTTON)
