@@ -11,7 +11,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 
 
 #lena branch2
-@pytest.fixture(params=["chrome", "firefox"], scope="class", autouse=True)
+@pytest.fixture(params=["chrome"], scope="class", autouse=True)
 def init_driver(request):
     if request.param == "chrome":
         service = ChromeService(executable_path=SetupData.CHROME_EXEC_PATH)
