@@ -13,6 +13,8 @@ class BooksPage(BasePage):
     AUTHOR = (By.XPATH, "//*[@class='rt-resizable-header-content'] [contains(text(),'Author')]")
     PUBLISHER = (By.XPATH, "//*[@class='rt-resizable-header-content'] [contains(text(),'Publisher')]")
 
+    # // *[ @ id = "see-book-Git Pocket Guide"] / a
+
     '''Constructor of the page'''
 
     def __init__(self, driver):
@@ -24,13 +26,4 @@ class BooksPage(BasePage):
 
     def get_books_table_header_title(self):
         return self.get_element_text(self.TITLE)
-
-    def get_books_table_header_author(self):
-        return self.get_element_text(self.AUTHOR)
-
-    '''Used to check signup link'''
-
-    def is_header_displayed(self):
-        return self.is_enabled(self.TITLE)
-
 

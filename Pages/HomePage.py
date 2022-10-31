@@ -26,7 +26,7 @@ class HomePage(BasePage):
     '''Used to check if the logout button is displayed'''
 
     def is_logout(self):
-        return self.is_enabled(self.LOGOUT_BUTTON)
+        return self.is_visible(self.LOGOUT_BUTTON)
 
     '''Used to check the header value'''
 
@@ -37,11 +37,11 @@ class HomePage(BasePage):
     '''Used to check the account name value'''
 
     def get_account_name_value(self):
-        if self.is_enabled(self.ACCOUNT_NAME):
+        if self.is_visible(self.ACCOUNT_NAME):
             return self.get_element_text(self.ACCOUNT_NAME)
 
     '''Used to logout'''
 
     def logout(self):
-        if self.is_enabled(self.LOGOUT_BUTTON):
+        if self.is_visible(self.LOGOUT_BUTTON):
             self.click(self.LOGOUT_BUTTON)
