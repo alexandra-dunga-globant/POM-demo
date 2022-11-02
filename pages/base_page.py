@@ -3,8 +3,8 @@ __author__ = 'Alexandra Dunga'
 import time
 
 from selenium.webdriver import ActionChains, Keys
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 '''
 This class is the parent of all pages. It contains the generic methods and utilities for all pages.

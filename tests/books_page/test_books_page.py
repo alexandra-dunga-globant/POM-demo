@@ -3,8 +3,8 @@ __author__ = 'Alexandra Dunga'
 import pytest
 
 from config.config import TestData
-from tests.test_base import BaseTest
 from pages.books_page import BooksPage
+from tests.test_base import BaseTest
 
 
 class TestBooks(BaseTest):
