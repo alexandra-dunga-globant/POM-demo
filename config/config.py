@@ -23,4 +23,3 @@ class TestData:
 
     #Books
     BOOKS_URL = "https://demoqa.com/books"
-

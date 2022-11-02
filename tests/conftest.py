@@ -1,7 +1,8 @@
 import pytest
-from Config.config import TestData
-from Pages.BooksPage import BooksPage
-from Pages.LoginPage import LoginPage
+
+from config.config import TestData
+from pages.books_page import BooksPage
+from pages.login_page import LoginPage
 
 
 @pytest.fixture(scope="class")

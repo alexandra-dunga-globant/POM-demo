@@ -1,7 +1,7 @@
 __author__ = 'Alexandra Dunga'
 
-from Tests.test_base import BaseTest
-from Config.config import TestData
+from config.config import TestData
+from tests.test_base import BaseTest
 
 
 class TestHome(BaseTest):
