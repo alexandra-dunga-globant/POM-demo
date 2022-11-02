@@ -7,8 +7,8 @@ from pages.login_page import LoginPage
 
 @pytest.fixture(scope="class")
 def setup_login_page(init_driver):
-    loginPage = LoginPage(init_driver)
-    yield loginPage
+    yield LoginPage(init_driver)
+
 
 @pytest.fixture(scope="class")
 def setup_home_page(init_driver):
@@ -19,5 +19,4 @@ def setup_home_page(init_driver):
 
 @pytest.fixture(scope="class")
 def setup_books_page(init_driver):
-    booksPage = BooksPage(init_driver)
-    yield booksPage
+    yield BooksPage(init_driver)
