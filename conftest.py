@@ -2,8 +2,8 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver import ActionChains, Keys
 
-from Config.config import TestData
-from Config.setup import SetupData
+from config.config import TestData
+from config.setup import SetupData
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 

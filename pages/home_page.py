@@ -2,7 +2,7 @@ __author__ = 'Alexandra Dunga'
 
 from selenium.webdriver.common.by import By
 
-from Pages.base_page import BasePage
+from pages.base_page import BasePage
 
 
 class HomePage(BasePage):
