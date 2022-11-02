@@ -26,4 +26,3 @@ class BooksPage(BasePage):
 
     def get_books_table_header_title(self):
         return self.get_element_text(self.TITLE)
-

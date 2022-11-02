@@ -40,5 +40,3 @@ class BasePage:
 
     def is_text_element_displayed(self, text_item):
         return self.is_visible(text_item)
-
-
