@@ -1,6 +1,11 @@
+from decouple import config
+
 class SetupData:
     # to have a separate setup.py file only for exec path ( for ex browsers in incognito, specific states)
-    CHROME_EXEC_PATH = "/Users/alexandra.dunga/Downloads/chromedriver"
-    FIREFOX_EXEC_PATH = "/Users/alexandra.dunga/Downloads/geckodriver"
-    EDGE_EXEC_PATH = "/Users/alexandra.dunga/Downloads/msedgedriver"
-    SAFARI_EXEC_PATH = "/Users/alexandra.dunga/Downloads/safaridriver"
+
+    USER = config('USER')
+
+    CHROME_EXEC_PATH = f"/Users/{USER}/Downloads/chromedriver"
+    FIREFOX_EXEC_PATH = f"/Users/{USER}/Downloads/geckodriver"
+    EDGE_EXEC_PATH = f"/Users/{USER}/Downloads/msedgedriver"
+    SAFARI_EXEC_PATH = f"/Users/{USER}/Downloads/safaridriver"
