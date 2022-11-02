@@ -2,6 +2,7 @@ from decouple import config
 
 class SetupData:
     # to have a separate setup.py file only for exec path ( for ex browsers in incognito, specific states)
+    #test PR
 
     USER = config('USER')
 
