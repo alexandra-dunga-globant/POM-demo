@@ -1,7 +1,7 @@
-POM-demo Tests
+POM-Demo Tests
 ===============================
 
-POM-demo Tests is a suite of UI automated tests for testing the login part of a web application.
+POM-Demo Tests is a suite of UI automated tests for testing the login part of a web application.
 
 Running the Tests Locally
 =========================
@@ -28,10 +28,10 @@ Running the Tests Locally
 
 * Run all tests or a certain UI test, on a given environment:
 
-        pytest Tests/test_HomePage.py -v --html=./POM-demo3.html
+        pytest -v -s --html=./POM-demo3.html
         pytest Tests/test_LoginPage.py -v -nauto --html=./POM-demo3.html
 
 * Run only 1 test: 
         
-        pytest -k test_home_page_title
+        pytest -v -s -k test_home_page_title
 
