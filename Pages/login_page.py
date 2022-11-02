@@ -1,8 +1,8 @@
 __author__ = 'Alexandra Dunga'
 
 from selenium.webdriver.common.by import By
-from Pages.BasePage import BasePage
-from Pages.HomePage import HomePage
+from Pages.base_page import BasePage
+from Pages.home_page import HomePage
 
 
 class LoginPage(BasePage):

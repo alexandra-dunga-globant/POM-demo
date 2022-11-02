@@ -4,7 +4,7 @@ import pytest
 
 from Config.config import TestData
 from Tests.test_base import BaseTest
-from Pages.BooksPage import BooksPage
+from Pages.books_page import BooksPage
 
 
 # @pytest.mark.usefixtures("setup_books_page")
