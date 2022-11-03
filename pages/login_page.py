@@ -2,11 +2,13 @@ __author__ = 'Alexandra Dunga'
 
 from selenium.webdriver.common.by import By
 
+from config.config import TestData
 from pages.base_page import BasePage
 from pages.home_page import HomePage
 
 
 class LoginPage(BasePage):
+    path = TestData.BASE_URL + '/login'
     """
     By locators
     """
@@ -19,6 +21,7 @@ class LoginPage(BasePage):
     def __init__(self, driver):
         """Constructor of the page"""
         super().__init__(driver)
+        self.driver.get(self.path)
 
     '''Page actions for Login Page'''
 

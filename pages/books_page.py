@@ -7,6 +7,7 @@ from pages.base_page import BasePage
 
 
 class BooksPage(BasePage):
+    path = TestData.BASE_URL + '/books'
     """
     By locators
     """
@@ -19,7 +20,7 @@ class BooksPage(BasePage):
     def __init__(self, driver):
         """Constructor of the page"""
         super().__init__(driver)
-        self.driver.get(TestData.BOOKS_URL)
+        self.driver.get(self.path)
 
     '''Page actions for Books Page'''
 
