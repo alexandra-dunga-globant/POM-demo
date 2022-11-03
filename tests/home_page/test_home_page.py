@@ -19,4 +19,4 @@ class TestHome(BaseTest):
         assert account_name == TestData.ACCOUNT_NAME
 
     def test_home_page_logout_button(self, setup_home_page):
-        assert setup_home_page.is_logout()
+        assert setup_home_page.is_logout_displayed()

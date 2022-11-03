@@ -9,8 +9,9 @@ from config.config import TestData
 from config.setup import SetupData
 
 
-@pytest.fixture(params=["chrome"], scope="class", autouse=True)
-def init_driver(request):
+@pytest.fixture(params=["chrome"], scope="class")
+def browser(request):
+    """Initialising the browser(s)"""
     if request.param == "chrome":
         service = ChromeService(executable_path=SetupData.CHROME_EXEC_PATH)
         web_driver = webdriver.Chrome(service=service)

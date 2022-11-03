@@ -16,14 +16,12 @@ class BooksPage(BasePage):
 
     # // *[ @ id = "see-book-Git Pocket Guide"] / a
 
-    '''Constructor of the page'''
-
     def __init__(self, driver):
+        """Constructor of the page"""
         super().__init__(driver)
         self.driver.get(TestData.BOOKS_URL)
 
     '''Page actions for Books Page'''
-    '''Used to get the page title'''
 
     def get_books_table_header_title(self):
         return self.get_element_text(self.TITLE)
