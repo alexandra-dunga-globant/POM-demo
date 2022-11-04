@@ -9,17 +9,57 @@ from config.config import TestData
 from config.setup import SetupData
 
 
-@pytest.fixture(params=["chrome"], scope="class")
+def pytest_addoption(parser):
+    parser.addoption(
+        "--env",
+        action="store",
+        dest="env",
+        default="PROD",
+        choices=("QA", "PROD"),
+        help="The environment for the application under test."
+    )
+    parser.addoption(
+        "--browser",
+        action="store",
+        dest="browser",
+        default="chrome",
+        choices=("firefox", "chrome"),
+        help="Select your desired browser.",
+    )
+
+
+@pytest.fixture(scope="session")
+def env(request):
+    """
+    E.g.: QA, PROD.
+    :param request:
+    :return: The environment for the application under test.
+    """
+    e = request.config.getoption("env")
+    return e.upper()
+
+
+@pytest.fixture(scope="session")
+def base_url(env):
+    """
+    E.g. https://api.sandbox.paack.app
+    :param env:
+    :return: The API base URL corresponding to the given environment.
+    """
+    return TestData.BASE_URL[env]
+
+
+@pytest.fixture(scope="class")
 def browser(request):
     """Initialising the browser(s)"""
-    if request.param == "chrome":
+    browser = request.config.getoption("browser").lower()
+    if browser == "chrome":
         service = ChromeService(executable_path=SetupData.CHROME_EXEC_PATH)
         web_driver = webdriver.Chrome(service=service)
-    if request.param == "firefox":
+    if browser == "firefox":
         service = FirefoxService(executable_path=SetupData.FIREFOX_EXEC_PATH)
         web_driver = webdriver.Firefox(service=service)
     web_driver.delete_all_cookies()
-    web_driver.get(TestData.BASE_URL)
     web_driver.maximize_window()
     request.cls.driver = web_driver
     yield web_driver

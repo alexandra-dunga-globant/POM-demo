@@ -7,7 +7,7 @@ from pages.base_page import BasePage
 
 
 class BooksPage(BasePage):
-    path = TestData.BASE_URL + '/books'
+
     """
     By locators
     """
@@ -15,12 +15,15 @@ class BooksPage(BasePage):
     AUTHOR = (By.XPATH, "//*[@class='rt-resizable-header-content'] [contains(text(),'Author')]")
     PUBLISHER = (By.XPATH, "//*[@class='rt-resizable-header-content'] [contains(text(),'Publisher')]")
 
-    # // *[ @ id = "see-book-Git Pocket Guide"] / a
-
-    def __init__(self, driver):
+    def __init__(self, driver, base_url, env):
         """Constructor of the page"""
         super().__init__(driver)
-        self.driver.get(self.path)
+        self.base_url = base_url
+        self.env = env
+        self.browser = driver
+        self.path = "/books"
+        # adding /books to the base_url
+        self.driver.get(f"{self.base_url}{self.path}")
 
     '''Page actions for Books Page'''
 
