@@ -8,7 +8,7 @@ from pages.home_page import HomePage
 
 
 class LoginPage(BasePage):
-    path = TestData.BASE_URL + '/login'
+    # path = TestData.BASE_URL + '/login'
     """
     By locators
     """
@@ -18,10 +18,15 @@ class LoginPage(BasePage):
     LOGIN_BUTTON = (By.ID, "login")
     SIGNUP_LINK = (By.ID, "newUser")
 
-    def __init__(self, driver):
+    def __init__(self, driver, base_url, env):
         """Constructor of the page"""
         super().__init__(driver)
-        self.driver.get(self.path)
+        self.base_url = base_url
+        self.env = env
+        self.browser = driver
+        self.path = "/login"
+        # adding /login to the base_url
+        self.driver.get(f"{self.base_url}{self.path}")
 
     '''Page actions for Login Page'''
 

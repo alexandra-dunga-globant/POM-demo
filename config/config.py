@@ -7,7 +7,11 @@ from decouple import config
 # to run remote tests on Github actions (including passwords)
 
 class TestData:
-    BASE_URL = "https://demoqa.com"
+    BASE_URL = {
+        "QA": "https://demoqa.com",
+        "PROD": "https://demoqa.com"
+    }
+
     USERNAME = config('USERNAME')
     PASSWORD = config('PASSWORD')
 
