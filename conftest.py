@@ -18,6 +18,14 @@ def pytest_addoption(parser):
         choices=("QA", "PROD"),
         help="The environment for the application under test."
     )
+    parser.addoption(
+        "--browser",
+        action="store",
+        dest="browser",
+        default="chrome",
+        choices=("firefox", "chrome"),
+        help="Select your desired browser.",
+    )
 
 
 @pytest.fixture(scope="session")
@@ -41,17 +49,17 @@ def base_url(env):
     return TestData.BASE_URL[env]
 
 
-@pytest.fixture(params=["chrome"], scope="class")
+@pytest.fixture(scope="class")
 def browser(request):
     """Initialising the browser(s)"""
-    if request.param == "chrome":
+    browser = request.config.getoption("browser").lower()
+    if browser == "chrome":
         service = ChromeService(executable_path=SetupData.CHROME_EXEC_PATH)
         web_driver = webdriver.Chrome(service=service)
-    if request.param == "firefox":
+    if browser == "firefox":
         service = FirefoxService(executable_path=SetupData.FIREFOX_EXEC_PATH)
         web_driver = webdriver.Firefox(service=service)
     web_driver.delete_all_cookies()
-    # web_driver.get(TestData.BASE_URL)
     web_driver.maximize_window()
     request.cls.driver = web_driver
     yield web_driver
