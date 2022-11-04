@@ -28,10 +28,14 @@ Running the Tests Locally
 
 * Run all tests or a certain UI test, on a given environment:
 
-        pytest -v -s --html=./POM-demo3.html
-        pytest Tests/test_LoginPage.py -v -nauto --html=./POM-demo3.html
+        pytest -v -s --html=./POM-demo3.html --env PROD
+        pytest tests/login_page/test_login_page.py -v -s -nauto --html=./POM-demo3.html --env QA --browser chrome
 
-* Run only 1 test: 
+* Run only 1 test on a specific browser: 
+        
+        pytest -v -s -k test_home_page_title --env PROD --browser firefox
+
+* Run only 1 test on default environment (PROD) and default browser (chrome) : 
         
         pytest -v -s -k test_home_page_title
 
