@@ -6,4 +6,6 @@ DONE 5) Cand vine vb de path to chromedriver -
 DONE 6) selenium functioneaza si fara sa deschida efectiv browserul - vedeti optiunea headless
 DONE 7) Apropo de naming conventions (pt variabile, clase, fixturi, functii metode etc)... e bine sa se aleaga nume cat mai simple si la subiect. In ideea aceasta:
 ce ati numit voi init_driver eu i-as zice mai simplu: browser
+DONE 8) De adaugat --headless [1= True,0 = False] ca optiune in linia de comanda
+TO DO 9) De adaugat logica pt --browser all -> ca sa ruleze testul in toate browserele
 
