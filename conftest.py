@@ -2,8 +2,10 @@ import pytest
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains, Keys
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
+
 
 from config.config import TestData
 from config.setup import SetupData
@@ -42,7 +44,7 @@ def env(request):
 @pytest.fixture(scope="session")
 def base_url(env):
     """
-    E.g. https://api.sandbox.paack.app
+    E.g. https://demoqa.com
     :param env:
     :return: The API base URL corresponding to the given environment.
     """
@@ -54,8 +56,10 @@ def browser(request):
     """Initialising the browser(s)"""
     browser = request.config.getoption("browser").lower()
     if browser == "chrome":
+        options = Options()
+        options.headless = True
         service = ChromeService(executable_path=SetupData.CHROME_EXEC_PATH)
-        web_driver = webdriver.Chrome(service=service)
+        web_driver = webdriver.Chrome(service=service, options=options)
     if browser == "firefox":
         service = FirefoxService(executable_path=SetupData.FIREFOX_EXEC_PATH)
         web_driver = webdriver.Firefox(service=service)
