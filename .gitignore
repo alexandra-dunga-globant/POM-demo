@@ -3,3 +3,6 @@
 /geckodriver.log
 /POM-demo3.html
 /tests/__init__.py
+/.bash_profile
+/.todo.txt
+/todo_local.txt
