@@ -6,5 +6,3 @@ class SetupData:
 
     CHROME_EXEC_PATH = "./resources/webdrivers/MacOS/chromedriver"
     FIREFOX_EXEC_PATH = "./resources/webdrivers/MacOS/geckodriver"
-    EDGE_EXEC_PATH = "./resources/webdrivers/MacOS//msedgedriver"
-    SAFARI_EXEC_PATH = "./resources/webdrivers/MacOS/safaridriver"
