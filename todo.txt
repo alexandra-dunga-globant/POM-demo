@@ -8,8 +8,8 @@ DONE 7) Apropo de naming conventions (pt variabile, clase, fixturi, functii meto
 ce ati numit voi init_driver eu i-as zice mai simplu: browser
 DONE 8) De adaugat --headless [1= True,0 = False] ca optiune in linia de comanda
 TO DO 9) De adaugat logica pt --browser all -> ca sa ruleze testul in toate browserele
-TO DO 10) Books page -> Click on a book title and check that the ISBN is displayed in the URL
-TO DO 11) Books page -> Click on a book title and check the total pages number is displayed in the page
+DONE 10) Books page -> Click on a book title and check that the ISBN is displayed in the URL
+DONE 11) Books page -> Click on a book title and check the ISBN and total pages number is displayed in the books detail page
 TO DO 12) Home page -> go to Book Store -> click -> check redirect -> Click on a book -> Add to your collection -> check book is added to /Profile page ( check also alert is displayed)
 TO DO 13) Home page -> delete a book from the collection -> check modal window, click OK, check book is removed from the list
 TO DO 14) Change nr of rows from 5 to 10 in the /Profile page

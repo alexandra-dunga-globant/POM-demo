@@ -34,7 +34,7 @@ def pytest_addoption(parser):
         dest="headless",
         default="0",
         choices=("1", "0"),
-        help="Select the browser state: headless (without GUI) or with GUI."
+        help="Select the browser state: 1 = headless (without GUI) or 0 = with GUI."
     )
 
 
@@ -89,12 +89,11 @@ def browser_from_cmd(request):
 
 
 
-@pytest.fixture(params=["",""], scope="class")
+@pytest.fixture(scope="class")
 def browser(request, browser_from_cmd, headless):
     """Initialising the browser(s)"""
     # Getting the browser from the command line
     browser = request.config.getoption("browser").lower()
-    print("---------Browsers: ", browser_from_cmd)
     if browser == "chrome":
         options = CHOptions()
         options.headless = headless

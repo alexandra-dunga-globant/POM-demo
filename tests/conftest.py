@@ -20,3 +20,9 @@ def setup_home_page(browser, base_url, env):
 @pytest.fixture(scope="class")
 def setup_books_page(browser, base_url, env):
     yield BooksPage(browser, base_url, env)
+
+@pytest.fixture(scope="class")
+def setup_books_details_page(browser, base_url, env):
+    booksPage = BooksPage(browser, base_url, env)
+    books_details_page = booksPage.get_book_details_page()
+    yield books_details_page
