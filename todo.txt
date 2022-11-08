@@ -14,4 +14,5 @@ TO DO 12) Home page -> go to Book Store -> click -> check redirect -> Click on a
 TO DO 13) Home page -> delete a book from the collection -> check modal window, click OK, check book is removed from the list
 TO DO 14) Change nr of rows from 5 to 10 in the /Profile page
 TO DO 15) Delete all Books from /Profile
+TO DO 16) Add Try except for login + logger.debug
 
