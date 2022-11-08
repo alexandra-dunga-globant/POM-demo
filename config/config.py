@@ -24,3 +24,11 @@ class TestData:
     LOGIN_PAGE_HEADER = "Login"
     HOME_PAGE_HEADER = "Profile"
     ACCOUNT_NAME = "Alexandra"
+
+    #Books page
+    BOOK_TITLE = "Learning JavaScript Design Patterns"
+    BOOK_AUTHOR = "Addy Osmani"
+    BOOK_PUBLISHER = "O'Reilly Media"
+    BOOK_ISBN = "9781449331818"
+    BOOK_URL = ""
+    BOOK_PAGE_NR = "254"
