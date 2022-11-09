@@ -18,7 +18,3 @@ TO DO 16) Add Try except for login + logger.debug
 TO DO 17) Handle menu with class composition
 TO DO 18) Add class diagram
 TO DO 19) Add example for dependent tests (one fails , the next one is ignored + passing variables from one test to another)
-
-PT Melania: exemplu pt class composition, tool pt architecture diagram , browser --all, exemplu pt try except
-
-
