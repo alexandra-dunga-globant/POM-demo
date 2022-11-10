@@ -1,0 +1,6 @@
+/.bash_profile
+/.env
+#ignore all files with .log extension
+/*.log
+#ignore all files within this directory
+/reports
