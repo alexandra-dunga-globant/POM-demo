@@ -6,11 +6,15 @@ from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+from regions.menu_region import MenuRegion
+
 
 class BasePage:
     """
     This class is the parent of all pages. It contains the generic methods and utilities for all pages.
     """
+    """class composition for Menu"""
+    MenuLocator = MenuRegion.MENU_ELEMENT
 
     def __init__(self, driver):
         self.driver = driver
@@ -39,3 +43,12 @@ class BasePage:
 
     def is_text_element_displayed(self, text_item):
         return self.is_visible(text_item)
+
+    def find_element(self, by_locator):
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+        return element
+
+    @property
+    def menu_region(self):
+        locator = self.find_element(self.MenuLocator)
+        return MenuRegion(self, root_element=locator)

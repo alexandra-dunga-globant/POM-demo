@@ -32,3 +32,6 @@ class TestData:
     BOOK_ISBN = "9781449331818"
     BOOK_URL = ""
     BOOK_PAGE_NR = "254"
+
+    #Menu item
+    MENU_ELEM_EXPANDED = "Practice Form"

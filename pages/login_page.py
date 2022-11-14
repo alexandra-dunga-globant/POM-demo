@@ -2,13 +2,11 @@ __author__ = 'Alexandra Dunga'
 
 from selenium.webdriver.common.by import By
 
-from config.config import TestData
 from pages.base_page import BasePage
 from pages.home_page import HomePage
 
 
 class LoginPage(BasePage):
-    # path = TestData.BASE_URL + '/login'
     """
     By locators
     """
