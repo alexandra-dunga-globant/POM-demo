@@ -48,6 +48,21 @@ def env(request):
     e = request.config.getoption("env")
     return e.upper()
 
+
+def pytest_configure(config):
+    # Add a new marker (env)
+    config.addinivalue_line(
+        "markers", "env(name): mark test to run only on named environment"
+    )
+
+
+def pytest_runtest_setup(item):
+    envnames = [mark.args[0] for mark in item.iter_markers(name="env")]
+    if envnames:
+        if item.config.getoption("--env") not in envnames:
+            pytest.skip("Test requires env in {!r}".format(envnames))
+
+
 @pytest.fixture(scope="session")
 def headless(request):
     """
