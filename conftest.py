@@ -50,6 +50,7 @@ def env(request):
 
 
 def pytest_configure(config):
+    # Add a new marker (env)
     config.addinivalue_line(
         "markers", "env(name): mark test to run only on named environment"
     )
