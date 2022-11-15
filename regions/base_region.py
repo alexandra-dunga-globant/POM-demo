@@ -3,7 +3,7 @@ __author__ = 'Alexandra Dunga'
 
 class BaseRegion:
     """
-    This class is the parent of all pages. It contains the generic methods and utilities for all pages.
+    This class is the parent of all regions. It contains the generic methods and utilities for all regions.
     """
     _root_locator = None
 
