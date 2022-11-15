@@ -1,15 +1,18 @@
 __author__ = 'Alexandra Dunga'
 
+import pytest
+
 from config.config import TestData
 from tests.test_base import BaseTest
 
-
+@pytest.mark.env("QA")
 class TestHome(BaseTest):
 
     def test_home_page_title(self, setup_home_page):
         title = setup_home_page.get_home_page_title(TestData.HOME_PAGE_TITLE)
         assert title == TestData.HOME_PAGE_TITLE
 
+    @pytest.mark.env("PROD")
     def test_home_page_header(self, setup_home_page):
         header = setup_home_page.get_header_value(TestData.HOME_PAGE_HEADER)
         assert header == TestData.HOME_PAGE_HEADER
