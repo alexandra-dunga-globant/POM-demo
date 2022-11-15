@@ -5,7 +5,7 @@ import pytest
 from config.config import TestData
 from regions.menu_region import MenuRegion
 
-
+@pytest.mark.env("QA")
 @pytest.mark.usefixtures("browser")
 class BaseTest:
     def test_click_menu(self, setup_login_page):
