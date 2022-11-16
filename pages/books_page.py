@@ -22,13 +22,10 @@ class BooksPage(BasePage):
 
     def __init__(self, driver, base_url, env):
         """Constructor of the page"""
-        super().__init__(driver)
-        self.base_url = base_url
-        self.env = env
-        self.browser = driver
+        super().__init__(driver, base_url, env)
         self.path = "/books"
         # adding /books to the base_url
-        self.driver.get(f"{self.base_url}{self.path}")
+        self.browser.get(f"{self.base_url}{self.path}")
 
     '''Page actions for Books Page'''
 
@@ -42,13 +39,4 @@ class BooksPage(BasePage):
     def get_book_details_page(self):
         full_url = self.get_book_details_url()
         book_id = full_url.partition("book=")[2]
-        return BooksDetailsPage(self.driver, self.base_url, self.env, book_id)
-
-
-
-
-
-
-
-
-
+        return BooksDetailsPage(self.browser, self.base_url, self.env, book_id)

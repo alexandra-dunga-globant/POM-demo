@@ -26,12 +26,12 @@ class TestHome(BaseTest):
         assert header == TestData.HOME_PAGE_HEADER
 
     @pytest.mark.dependency(depends=['test_unsuccessfull_login'])
-    @pytest.mark.skip(reason="deliberate skip")
+    @pytest.mark.skip(reason="deliberate skip due to test_unsuccessfull_login")
     def test_home_page_account_name(self, setup_home_page):
         account_name = setup_home_page.get_account_name_value()
         assert account_name == TestData.ACCOUNT_NAME
 
     @pytest.mark.dependency(depends=['test_unsuccessfull_login'])
-    @pytest.mark.skip(reason="deliberate skip")
+    @pytest.mark.skip(reason="deliberate skip due to test_unsuccessfull_login")
     def test_home_page_logout_button(self, setup_home_page):
         assert setup_home_page.is_logout_displayed()
