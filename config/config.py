@@ -14,6 +14,7 @@ class TestData:
 
     USERNAME = config('USERNAME')
     PASSWORD = config('PASSWORD')
+    WRONG_PASSWORD = "JustATest"
 
     # The values against we do ASSERTS in Test classes
     # TO DO
