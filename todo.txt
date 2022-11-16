@@ -17,6 +17,9 @@ TO DO 15) Delete all Books from /Profile
 TO DO 16) Add Try except for login + logger.debug
 DONE 17) Handle menu with class composition -> expand to all pages
 TO DO 18) Add class diagram
-TO DO 19) Add example for dependent tests (one fails , the next one is ignored + passing variables from one test to another)
-TO DO 20) Mark a test only for a specific environment
-TO DO 21) Mark a test as a smoke/regression
+DONE 19) Add example for dependent tests (one fails , the next one is ignored + passing variables from one test to another)
+-> run test:  pytest tests/home_page -v -s --env QA
+
+DONE 20) Mark a test only for a specific environment
+DONE 21) Mark a test as a smoke/regression -> run smoke tests:  pytest -v -m smoke --env QA
+
