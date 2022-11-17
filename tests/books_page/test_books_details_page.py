@@ -2,10 +2,8 @@ __author__ = 'Alexandra Dunga'
 
 import pytest
 
-from config.config import TestData
-from pages.base_page import BasePage
+from config.test_data import TestData
 from pages.books_details_page import BooksDetailsPage
-from pages.books_page import BooksPage
 from tests.test_base import BaseTest
 
 

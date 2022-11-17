@@ -1,6 +1,6 @@
 import pytest
 
-from config.config import TestData
+from config.test_data import TestData
 from pages.books_page import BooksPage
 from pages.login_page import LoginPage
 

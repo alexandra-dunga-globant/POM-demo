@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.options import Options as FFOptions
 from selenium.webdriver.firefox.service import Service as FirefoxService
 
-from config.config import TestData
+from config.test_data import TestData
 from config.setup import SetupData
 
 

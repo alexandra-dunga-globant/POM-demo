@@ -2,7 +2,7 @@ __author__ = 'Alexandra Dunga'
 
 import pytest
 
-from config.config import TestData
+from config.test_data import TestData
 from tests.test_base import BaseTest
 
 
