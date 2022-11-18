@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.options import Options as FFOptions
 from selenium.webdriver.firefox.service import Service as FirefoxService
 
-from config.config import TestData
+from config.test_data import TestData
 from config.setup import SetupData
 
 
@@ -50,10 +50,10 @@ def env(request):
 
 
 def pytest_configure(config):
-    # Add a new marker (env)
-    config.addinivalue_line(
-        "markers", "env(name): mark test to run only on named environment"
-    )
+    """ Add new markers """
+    config.addinivalue_line("markers", "env(name): mark test to run only on named environment")
+    config.addinivalue_line("markers", "smoke: mark test to run as smoke")
+    config.addinivalue_line("markers", "dependency(depends): mark test to run as smoke")
 
 
 def pytest_runtest_setup(item):
@@ -68,7 +68,7 @@ def headless(request):
     """
     E.g.: 1=true, 0=false.
     :param request:
-    :return: The headless state for the application under test.
+    :return: The headless state for the browser application under test.
     """
     h = request.config.getoption("headless")
     return bool(int(h))
@@ -85,27 +85,8 @@ def base_url(env):
     return TestData.BASE_URL[env]
 
 
-@pytest.fixture(scope="session")
-def browser_from_cmd(request):
-    """
-    Work in progress
-    E.g.: chrome, firefox, all.
-    :param request:
-    :return: The list of browsers on which to perform the tests. For running on multiple browsers.
-    """
-    browser_opt = request.config.getoption("browser").lower()
-    if browser_opt == "all":
-        browsers = ["chrome", "firefox"]
-    elif browser_opt == "chrome":
-        browsers = ["chrome"]
-    elif browser_opt == "firefox":
-        browsers = ["firefox"]
-    return browsers
-
-
-
 @pytest.fixture(scope="class")
-def browser(request, browser_from_cmd, headless):
+def browser(request, headless):
     """Initialising the browser(s)"""
     # Getting the browser from the command line
     browser = request.config.getoption("browser").lower()

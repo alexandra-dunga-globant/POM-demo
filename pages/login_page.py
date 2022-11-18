@@ -18,13 +18,10 @@ class LoginPage(BasePage):
 
     def __init__(self, driver, base_url, env):
         """Constructor of the page"""
-        super().__init__(driver)
-        self.base_url = base_url
-        self.env = env
-        self.browser = driver
+        super().__init__(driver, base_url, env)
         self.path = "/login"
         # adding /login to the base_url
-        self.driver.get(f"{self.base_url}{self.path}")
+        self.browser.get(f"{self.base_url}{self.path}")
 
     '''Page actions for Login Page'''
 
@@ -43,4 +40,4 @@ class LoginPage(BasePage):
             self.send_keys(self.EMAIL, username)
             self.send_keys(self.PASSWORD, password)
             self.click(self.LOGIN_BUTTON)
-            return HomePage(self.driver)
+            return HomePage(self.browser, self.base_url, self.env)

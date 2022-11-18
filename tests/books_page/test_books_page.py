@@ -2,9 +2,7 @@ __author__ = 'Alexandra Dunga'
 
 import pytest
 
-from config.config import TestData
-from pages.base_page import BasePage
-from pages.books_details_page import BooksDetailsPage
+from config.test_data import TestData
 from pages.books_page import BooksPage
 from tests.test_base import BaseTest
 
@@ -13,7 +11,7 @@ class TestBooks(BaseTest):
 
     @pytest.mark.parametrize("header", [BooksPage.TITLE_HEADER, BooksPage.AUTHOR_HEADER, BooksPage.PUBLISHER_HEADER])
     def test_is_header_displayed(self, setup_books_page, header):
-        flag = setup_books_page.is_text_element_displayed(header)
+        flag = setup_books_page.is_visible(header)
         assert flag
 
     @pytest.mark.parametrize("by_locator,expected_text",

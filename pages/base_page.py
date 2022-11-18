@@ -16,36 +16,35 @@ class BasePage:
     """class composition for Menu"""
     MenuLocator = MenuRegion.MENU_ELEMENT
 
-    def __init__(self, driver):
-        self.driver = driver
+    def __init__(self, driver, base_url, env):
+        self.browser = driver
+        self.base_url = base_url
+        self.env = env
 
     def click(self, by_locator):
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).click()
+        WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located(by_locator)).click()
 
     def send_keys(self, by_locator, text):
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)
+        WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)
 
     def get_element_text(self, by_locator):
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+        element = WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located(by_locator))
         return element.text
 
     def is_visible(self, by_locator):
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+        element = WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located(by_locator))
         return bool(element)
 
     def is_changed(self, by_locator, text):
-        element = WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element(by_locator, text))
+        element = WebDriverWait(self.browser, 10).until(EC.text_to_be_present_in_element(by_locator, text))
         return bool(element)
 
     def get_title(self, text):
-        WebDriverWait(self.driver, 10).until(EC.title_is(text))
-        return self.driver.title
-
-    def is_text_element_displayed(self, text_item):
-        return self.is_visible(text_item)
+        WebDriverWait(self.browser, 10).until(EC.title_is(text))
+        return self.browser.title
 
     def find_element(self, by_locator):
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+        element = WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located(by_locator))
         return element
 
     @property

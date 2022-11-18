@@ -12,11 +12,9 @@ class HomePage(BasePage):
     ACCOUNT_NAME = (By.ID, "userName-value")
     LOGOUT_BUTTON = (By.XPATH, "//*[contains(text(),'Log out')]")
 
-
-
-    def __init__(self, driver):
+    def __init__(self, driver, base_url, env):
         ''' Constructor of the page '''
-        super().__init__(driver)
+        super().__init__(driver, base_url, env)
 
     '''Page actions for Login Page'''
 

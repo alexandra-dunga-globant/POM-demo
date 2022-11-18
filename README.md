@@ -39,3 +39,7 @@ Running the Tests Locally
         
         pytest -v -s -k test_home_page_title
 
+* Run only smoke tests on default environment (PROD) and default browser (chrome) : 
+        
+        pytest -v -m smoke
+

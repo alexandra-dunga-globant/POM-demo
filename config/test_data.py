@@ -17,12 +17,11 @@ class TestData:
     WRONG_PASSWORD = "JustATest"
 
     # The values against we do ASSERTS in Test classes
-    # TO DO
-    # take dynamically these values
-    # and to add them into a dictionary inside a fixture
+    #Login page
     LOGIN_PAGE_TITLE = "ToolsQA"
-    HOME_PAGE_TITLE = "ToolsQA"
     LOGIN_PAGE_HEADER = "Login"
+    #Home page
+    HOME_PAGE_TITLE = "ToolsQA"
     HOME_PAGE_HEADER = "Profile"
     ACCOUNT_NAME = "Alexandra"
 
@@ -31,7 +30,6 @@ class TestData:
     BOOK_AUTHOR = "Addy Osmani"
     BOOK_PUBLISHER = "O'Reilly Media"
     BOOK_ISBN = "9781449331818"
-    BOOK_URL = ""
     BOOK_PAGE_NR = "254"
 
     #Menu item
