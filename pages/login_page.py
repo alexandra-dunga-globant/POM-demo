@@ -10,7 +10,6 @@ class LoginPage(BasePage):
     """
     By locators
     """
-    HEADER = (By.CSS_SELECTOR, "div.main-header")
     EMAIL = (By.ID, "userName")
     PASSWORD = (By.ID, "password")
     LOGIN_BUTTON = (By.ID, "login")
