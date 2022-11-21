@@ -15,7 +15,7 @@ DONE 11) Books page -> Click on a book title and check the ISBN and total pages 
 >>> TO DO <<<  15) Delete all Books from /Profile
 >>> TO DO <<<  16) Add Try except for login + logger.debug
 DONE 17) Handle menu with class composition -> expand to all pages
->>> TO DO <<<  18) Add class diagram
+DONE  18) Add class diagram
 DONE 19) Add example for dependent tests (one fails , the next one is ignored + passing variables from one test to another)
 -> run test:  pytest tests/home_page -v -s --env QA
 DONE 20) Mark a test only for a specific environment
