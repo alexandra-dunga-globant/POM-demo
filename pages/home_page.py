@@ -8,7 +8,6 @@ from pages.base_page import BasePage
 class HomePage(BasePage):
     """ By locators """
 
-    HEADER = (By.CSS_SELECTOR, "div.main-header")
     ACCOUNT_NAME = (By.ID, "userName-value")
     LOGOUT_BUTTON = (By.XPATH, "//*[contains(text(),'Log out')]")
 

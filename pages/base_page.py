@@ -3,6 +3,7 @@ __author__ = 'Alexandra Dunga'
 import time
 
 from selenium.webdriver import ActionChains, Keys
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -13,7 +14,10 @@ class BasePage:
     """
     This class is the parent of all pages. It contains the generic methods and utilities for all pages.
     """
-    """class composition for Menu"""
+    path = ""
+    """ By locators"""
+    HEADER = (By.CSS_SELECTOR, "div.main-header")
+    """ Class composition for Menu"""
     MenuLocator = MenuRegion.MENU_ELEMENT
 
     def __init__(self, driver, base_url, env):
