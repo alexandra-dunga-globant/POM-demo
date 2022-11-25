@@ -36,10 +36,6 @@ jobs:
         python-version: "3.10"
     - name: Install software
       run: sudo apt-get install -y chromium-browser
-    - name: Prepare Firefox
-      uses: browser-actions/setup-firefox@latest
-    - name: Install Geckodriver
-      run: sudo apt install firefox-geckodriver
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
