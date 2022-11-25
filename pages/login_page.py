@@ -1,5 +1,7 @@
 __author__ = 'Alexandra Dunga'
 
+from time import sleep
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -38,5 +40,6 @@ class LoginPage(BasePage):
         if self.is_visible(self.LOGIN_BUTTON):
             self.send_keys(self.EMAIL, username)
             self.send_keys(self.PASSWORD, password)
+            sleep(1)
             self.click(self.LOGIN_BUTTON)
             return HomePage(self.browser, self.base_url, self.env)
