@@ -4,6 +4,8 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.chrome.options import Options as CHOptions
 from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.chrome import ChromeType
 from selenium.webdriver.firefox.options import Options as FFOptions
 from selenium.webdriver.firefox.service import Service as FirefoxService
 
@@ -93,8 +95,9 @@ def browser(request, headless):
     if browser == "chrome":
         options = CHOptions()
         options.headless = headless
-        service = ChromeService(executable_path=SetupData.CHROME_EXEC_PATH)
-        web_driver = webdriver.Chrome(service=service, options=options)
+        chrome_service = ChromeService(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install())
+        # service = ChromeService(executable_path=SetupData.CHROME_EXEC_PATH)
+        web_driver = webdriver.Chrome(service=chrome_service, options=options)
     if browser == "firefox":
         options = FFOptions()
         options.headless = headless
