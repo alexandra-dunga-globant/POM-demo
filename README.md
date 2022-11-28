@@ -20,10 +20,10 @@ Running the Tests Locally
         virtualenv ve-pom -p python3
         source ve-pom/bin/activate
 
-* Add the username / password into `USERNAME` / `PASSWORD` environment variable:
+* Add the username / password into `USERNAME` / `PASSWORD` environment variables in a .env file:
 
-        USERNAME="ABCD"
-        PASSWORD="XYZ"
+        USERNAME_QA="ABCD"
+        PASSWORD_QA="XYZ"
 
 * Install packages and project dependencies:
 
