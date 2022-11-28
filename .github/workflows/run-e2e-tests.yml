@@ -27,8 +27,8 @@ jobs:
     env:
       USERNAME_QA: "${{ secrets.USERNAME_QA }}"
       PASSWORD_QA: "${{ secrets.PASSWORD_QA }}"
-      USERNAME: "${{ secrets.USERNAME_PROD }}"
-      PASSWORD: "${{ secrets.PASSWORD_PROD }}"
+      USERNAME_PROD: "${{ secrets.USERNAME_PROD }}"
+      PASSWORD_PROD: "${{ secrets.PASSWORD_PROD }}"
 
     steps:
     - uses: actions/checkout@v3
