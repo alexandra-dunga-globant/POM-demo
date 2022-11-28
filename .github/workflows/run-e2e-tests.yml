@@ -34,7 +34,7 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-    - name: Install software
+    - name: Install chromium software
       run: sudo apt-get install -y chromium-browser
     - name: Install dependencies
       run: |
@@ -48,15 +48,17 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Manual run of tests with pytest
+      timeout-minutes: 10
       if: github.event_name == 'workflow_dispatch'
       run: |
         pytest -v -s --env ${{ github.event.inputs.environment }} --headless 1
-        - name: Test with pytest
     - name: On push run with pytest
+      timeout-minutes: 10
       if: github.event_name == 'push'
       run: |
         pytest -v -s --env PROD --headless 1
         if: github.event_name == 'push'
     - name: On pull request run with pytest
+      timeout-minutes: 10
       run: |
         pytest -v -s --env PROD --headless 1
