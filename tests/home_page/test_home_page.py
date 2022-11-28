@@ -22,7 +22,7 @@ class TestHome(BaseTest):
 
     @pytest.mark.env("PROD")
     def test_home_page_header(self, setup_home_page):
-        header = setup_home_page.get_header_value(TestData.HOME_PAGE_HEADER)
+        header = setup_home_page.get_header_value()
         assert header == TestData.HOME_PAGE_HEADER
 
     @pytest.mark.dependency(depends=['test_unsuccessfull_login'])

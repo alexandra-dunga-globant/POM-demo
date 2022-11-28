@@ -1,5 +1,7 @@
 __author__ = 'Alexandra Dunga'
 
+from time import sleep
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -23,8 +25,10 @@ class HomePage(BasePage):
     def is_logout_displayed(self):
         return self.is_visible(self.LOGOUT_BUTTON)
 
-    def get_header_value(self, text):
-        if self.is_changed(self.HEADER, text):
+    def get_header_value(self):
+        if self.is_visible(self.HEADER):
+            # wait for loading to finish
+            sleep(2)
             return self.get_element_text(self.HEADER)
 
     def get_account_name_value(self):
