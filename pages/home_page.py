@@ -28,7 +28,7 @@ class HomePage(BasePage):
     def get_header_value(self):
         if self.is_visible(self.HEADER):
             # wait for loading to finish
-            sleep(2)
+            sleep(10)
             return self.get_element_text(self.HEADER)
 
     def get_account_name_value(self):

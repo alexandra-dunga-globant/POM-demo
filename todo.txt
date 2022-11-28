@@ -1,22 +1,21 @@
-DONE 1) Comentarii: (reguli generale)
-DONE 2) Legat de BASE_URL - fara path si per env
-DONE 3) env-ul de obicei se citeste din linia de comanda, deci trebuie si el inclus
-DONE 4) La fel, trebuie sa avem libertatea sa alegem ce tip de browser vrem sa folosim pt un anumit test, care se da si el din linia de comanda
-DONE 5) Cand vine vb de path to chromedriver -
-DONE 6) selenium functioneaza si fara sa deschida efectiv browserul - vedeti optiunea headless
-DONE 7) Apropo de naming conventions (pt variabile, clase, fixturi, functii metode etc)... e bine sa se aleaga nume cat mai simple si la subiect. In ideea aceasta:
-ce ati numit voi init_driver eu i-as zice mai simplu: browser
-DONE 8) De adaugat --headless [1= True,0 = False] ca optiune in linia de comanda
-TO DO 9) De adaugat logica pt --browser all -> ca sa ruleze testul in toate browserele
+DONE 1) Comments - not to many, not to little, make sure the code is self explanatory
+DONE 2) Change the BASE_URL to base (www.homepage.com) and have different BASE URL per env
+DONE 3) Add env in command line (Default PROD)
+DONE 4) Add Browser in command line (Default Chrome)
+DONE 5) Add Browser Drivers in project resources (Chromedriver and Geckodriver)
+DONE 6) Add the option to run in --headless mode
+DONE 7) Change naming to respect KISS, to be easy to read and consistent
+DONE 8) Add Headless in command line
+>>> TO DO <<<  9) Add login for --browser all -> to be able to run in all browsers
 DONE 10) Books page -> Click on a book title and check that the ISBN is displayed in the URL
 DONE 11) Books page -> Click on a book title and check the ISBN and total pages number is displayed in the books detail page
-TO DO 12) Home page -> go to Book Store -> click -> check redirect -> Click on a book -> Add to your collection -> check book is added to /Profile page ( check also alert is displayed)
-TO DO 13) Home page -> delete a book from the collection -> check modal window, click OK, check book is removed from the list
-TO DO 14) Change nr of rows from 5 to 10 in the /Profile page
-TO DO 15) Delete all Books from /Profile
-TO DO 16) Add Try except for login + logger.debug
+>>> TO DO <<< 12) Home page -> go to Book Store -> click -> check redirect -> Click on a book -> Add to your collection -> check book is added to /Profile page ( check also alert is displayed)
+>>> TO DO <<<  13) Home page -> delete a book from the collection -> check modal window, click OK, check book is removed from the list
+>>> TO DO <<<  14) Change nr of rows from 5 to 10 in the /Profile page
+>>> TO DO <<<  15) Delete all Books from /Profile
+>>> TO DO <<<  16) Add Try except for login + logger.debug
 DONE 17) Handle menu with class composition -> expand to all pages
-TO DO 18) Add class diagram
+DONE  18) Add class diagram
 DONE 19) Add example for dependent tests (one fails , the next one is ignored + passing variables from one test to another)
 -> run test:  pytest tests/home_page -v -s --env QA
 DONE 20) Mark a test only for a specific environment
