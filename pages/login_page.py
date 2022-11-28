@@ -40,6 +40,5 @@ class LoginPage(BasePage):
         if self.is_visible(self.LOGIN_BUTTON):
             self.send_keys(self.EMAIL, username)
             self.send_keys(self.PASSWORD, password)
-            sleep(1)
             self.click(self.LOGIN_BUTTON)
             return HomePage(self.browser, self.base_url, self.env)

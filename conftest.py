@@ -98,7 +98,6 @@ def browser(request, headless):
         chrome_service = ChromeService(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install())
         options = [
             "--disable-gpu",
-            "--window-size=1920,1200",
             "--ignore-certificate-errors",
             "--disable-extensions",
             "--no-sandbox",
@@ -112,7 +111,6 @@ def browser(request, headless):
         ff_options.headless = headless
         options = [
             "--disable-gpu",
-            "--window-size=1920,1200",
             "--ignore-certificate-errors",
             "--disable-extensions",
             "--no-sandbox",
