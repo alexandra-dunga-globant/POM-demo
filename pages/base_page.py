@@ -40,7 +40,7 @@ class BasePage:
         return bool(element)
 
     def is_changed(self, by_locator, text):
-        element = WebDriverWait(self.browser, 10).until(EC.text_to_be_present_in_element(by_locator, text))
+        element = WebDriverWait(self.browser, 20).until(EC.text_to_be_present_in_element(by_locator, text))
         return bool(element)
 
     def get_title(self, text):
