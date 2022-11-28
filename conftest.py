@@ -8,9 +8,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.chrome import ChromeType
 from selenium.webdriver.firefox.options import Options as FFOptions
 from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
 
 from config.test_data import TestData
-from config.setup import SetupData
 
 
 def pytest_addoption(parser):
@@ -93,18 +93,40 @@ def browser(request, headless):
     # Getting the browser from the command line
     browser = request.config.getoption("browser").lower()
     if browser == "chrome":
-        options = CHOptions()
-        options.headless = headless
+        chrome_options = CHOptions()
+        chrome_options.headless = headless
         chrome_service = ChromeService(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install())
-        # service = ChromeService(executable_path=SetupData.CHROME_EXEC_PATH)
-        web_driver = webdriver.Chrome(service=chrome_service, options=options)
+        options = [
+            "--disable-gpu",
+            "--window-size=1920,1200",
+            "--ignore-certificate-errors",
+            "--disable-extensions",
+            "--no-sandbox",
+            "--disable-dev-shm-usage"
+        ]
+        for option in options:
+            chrome_options.add_argument(option)
+        web_driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
     if browser == "firefox":
-        options = FFOptions()
-        options.headless = headless
-        service = FirefoxService(executable_path=SetupData.FIREFOX_EXEC_PATH)
-        web_driver = webdriver.Firefox(service=service, options=options)
+        ff_options = FFOptions()
+        ff_options.headless = headless
+        options = [
+            "--disable-gpu",
+            "--window-size=1920,1200",
+            "--ignore-certificate-errors",
+            "--disable-extensions",
+            "--no-sandbox",
+            "--disable-dev-shm-usage"
+        ]
+        for option in options:
+            ff_options.add_argument(option)
+        service = FirefoxService(executable_path=GeckoDriverManager().install())
+        web_driver = webdriver.Firefox(service=service, options=ff_options)
     web_driver.delete_all_cookies()
-    web_driver.maximize_window()
+    if headless:
+        web_driver.set_window_size(1920, 1200)
+    else:
+        web_driver.maximize_window()
     request.cls.driver = web_driver
     yield web_driver
     web_driver.quit()
