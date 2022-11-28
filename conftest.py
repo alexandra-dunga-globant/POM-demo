@@ -86,6 +86,24 @@ def base_url(env):
     """
     return TestData.BASE_URL[env]
 
+@pytest.fixture(scope="session")
+def get_username(env):
+    """
+    E.g. https://demoqa.com
+    :param env:
+    :return: The credentials(username) corresponding to the given environment.
+    """
+    return TestData.USERNAME[env]
+
+@pytest.fixture(scope="session")
+def get_password(env):
+    """
+    E.g. https://demoqa.com
+    :param env:
+    :return: The credentials(password) corresponding to the given environment.
+    """
+    return TestData.PASSWORD[env]
+
 
 @pytest.fixture(scope="class")
 def browser(request, headless):
