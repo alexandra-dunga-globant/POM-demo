@@ -11,9 +11,9 @@ def setup_login_page(browser, base_url, env):
 
 
 @pytest.fixture(scope="class")
-def setup_home_page(browser, base_url, env, get_username, get_password):
+def setup_home_page(browser, base_url, env, credentials):
     loginPage = LoginPage(browser, base_url, env)
-    homePage = loginPage.login(get_username, get_password)
+    homePage = loginPage.login(credentials['username'], credentials['password'])
     yield homePage
     homePage.logout()
 

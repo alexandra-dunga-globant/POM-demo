@@ -12,14 +12,6 @@ class TestData:
         "PROD": "https://demoqa.com"
     }
 
-    USERNAME = {
-        "QA": config('USERNAME_QA'),
-        "PROD": config('USERNAME_PROD')
-    }
-    PASSWORD = {
-        "QA": config('PASSWORD_QA'),
-        "PROD": config('PASSWORD_PROD')
-    }
     WRONG_PASSWORD = "JustATest"
 
     # The values against we do ASSERTS in Test classes
