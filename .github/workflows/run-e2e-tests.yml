@@ -59,8 +59,8 @@ jobs:
       if: github.event_name == 'push'
       run: |
         pytest -v -s --env PROD --headless 1
-        if: github.event_name == 'push'
     - name: On pull request run with pytest
       timeout-minutes: 10
+      if: github.event_name == 'push'
       run: |
         pytest -v -s --env PROD --headless 1
