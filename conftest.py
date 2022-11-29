@@ -1,13 +1,13 @@
+import os
 import pytest
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.chrome.options import Options as CHOptions
 from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.chrome import ChromeType
 from selenium.webdriver.firefox.options import Options as FFOptions
 from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.chrome import ChromeDriverManager, ChromeType
 from webdriver_manager.firefox import GeckoDriverManager
 
 from config.test_data import TestData
@@ -76,7 +76,6 @@ def headless(request):
     return bool(int(h))
 
 
-
 @pytest.fixture(scope="session")
 def base_url(env):
     """
@@ -87,22 +86,18 @@ def base_url(env):
     return TestData.BASE_URL[env]
 
 @pytest.fixture(scope="session")
-def get_username(env):
+def credentials(env):
     """
-    E.g. https://demoqa.com
-    :param env:
-    :return: The credentials(username) corresponding to the given environment.
-    """
-    return TestData.USERNAME[env]
-
-@pytest.fixture(scope="session")
-def get_password(env):
-    """
-    E.g. https://demoqa.com
-    :param env:
-    :return: The credentials(password) corresponding to the given environment.
-    """
-    return TestData.PASSWORD[env]
+        E.g. https://demoqa.com
+        :param env:
+        :return: The credentials(username and password) corresponding to the given environment.
+        """
+    if env == "prod":
+        return dict(username=os.environ['USERNAME_PROD'],
+                    password=os.environ['PASSWORD_PROD'])
+    else:
+        return dict(username=os.environ['USERNAME_QA'],
+                    password=os.environ['PASSWORD_QA'])
 
 
 @pytest.fixture(scope="class")
