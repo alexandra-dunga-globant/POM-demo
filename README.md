@@ -4,7 +4,7 @@ POM-Demo Tests
 POM-Demo Tests is a suite of UI automated tests build on Selenium and Python for testing a sample web application.
 
 Class diagram :
-![](./resources/class_diagram/POM-demo class diagram.drawio.png)
+<img height="400" src="./resources/class_diagram/POM-demo-class-diagram.drawio.png" width="800"/>
 
 Running the Tests Locally
 =========================

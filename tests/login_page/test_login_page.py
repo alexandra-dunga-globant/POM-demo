@@ -18,5 +18,5 @@ class TestLogin(BaseTest):
         assert title == TestData.LOGIN_PAGE_TITLE
 
     def test_login_page_header(self, setup_login_page):
-        header = setup_login_page.get_header_value(TestData.LOGIN_PAGE_HEADER)
+        header = setup_login_page.get_header_value()
         assert header == TestData.LOGIN_PAGE_HEADER
