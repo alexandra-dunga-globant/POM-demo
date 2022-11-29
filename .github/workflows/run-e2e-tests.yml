@@ -12,10 +12,10 @@ on:
         options:
         - PROD
         - QA
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
 
 permissions:
   contents: read
@@ -54,13 +54,13 @@ jobs:
       if: github.event_name == 'workflow_dispatch'
       run: |
         pytest -v -s --env ${{ github.event.inputs.environment }} --headless 1
-    - name: On push run with pytest
-      timeout-minutes: 10
-      if: github.event_name == 'push'
-      run: |
-        pytest -v -s --env PROD --headless 1
-    - name: On pull request run with pytest
-      timeout-minutes: 10
-      if: github.event_name == 'pull_request'
-      run: |
-        pytest -v -s --env PROD --headless 1
+#     - name: On push run with pytest
+#       timeout-minutes: 10
+#       if: github.event_name == 'push'
+#       run: |
+#         pytest -v -s --env PROD --headless 1
+#     - name: On pull request run with pytest
+#       timeout-minutes: 10
+#       if: github.event_name == 'pull_request'
+#       run: |
+#         pytest -v -s --env PROD --headless 1
