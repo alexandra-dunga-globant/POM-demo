@@ -4,7 +4,7 @@ POM-Demo Tests
 POM-Demo Tests is a suite of UI automated tests build on Selenium and Python for testing a sample web application.
 
 Class diagram :
-![](./resources/class_diagram/POM-demo class diagram.drawio.png)
+<img height="400" src="./resources/class_diagram/POM-demo-class-diagram.drawio.png" width="800"/>
 
 Running the Tests Locally
 =========================
@@ -20,10 +20,10 @@ Running the Tests Locally
         virtualenv ve-pom -p python3
         source ve-pom/bin/activate
 
-* Add the username / password into `USERNAME` / `PASSWORD` environment variables in a .env file:
-
-        USERNAME_QA="ABCD"
-        PASSWORD_QA="XYZ"
+* Create & update a file `.env` and then export the secrets to environment variables (for an example, check .env.example file): 
+        
+        cp .env.example .env
+        source .env
 
 * Install packages and project dependencies:
 

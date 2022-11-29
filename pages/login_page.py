@@ -29,8 +29,8 @@ class LoginPage(BasePage):
     def get_login_page_title(self, text):
         return self.get_title(text)
 
-    def get_header_value(self, text):
-        if self.is_changed(self.HEADER, text):
+    def get_header_value(self):
+        if self.is_visible(self.HEADER):
             return self.get_element_text(self.HEADER)
 
     def is_signup_link_displayed(self):
