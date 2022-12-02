@@ -2,7 +2,7 @@ DONE 1) Comments - not to many, not to little, make sure the code is self explan
 DONE 2) Change the BASE_URL to base (www.homepage.com) and have different BASE URL per env
 DONE 3) Add env in command line (Default PROD)
 DONE 4) Add Browser in command line (Default Chrome)
-DONE 5) Add Browser Drivers in project resources (Chromedriver and Geckodriver)
+DONE 5) Add Browser Drivers in project resources (Chromedriver and Geckodriver) - changed to installing the latest version (to be able to run on github actions)
 DONE 6) Add the option to run in --headless mode
 DONE 7) Change naming to respect KISS, to be easy to read and consistent
 DONE 8) Add Headless in command line
