@@ -1,6 +1,5 @@
 import pytest
 
-from config.test_data import TestData
 from pages.books_page import BooksPage
 from pages.login_page import LoginPage
 
@@ -17,9 +16,11 @@ def setup_home_page(browser, base_url, env, credentials):
     yield homePage
     homePage.logout()
 
+
 @pytest.fixture(scope="class")
 def setup_books_page(browser, base_url, env):
     yield BooksPage(browser, base_url, env)
+
 
 @pytest.fixture(scope="class")
 def setup_books_details_page(browser, base_url, env):
