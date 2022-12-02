@@ -85,6 +85,7 @@ def base_url(env):
     """
     return TestData.BASE_URL[env]
 
+
 @pytest.fixture(scope="session")
 def credentials(env):
     """
