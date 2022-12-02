@@ -11,7 +11,7 @@ class TestHome(BaseTest):
 
     @pytest.mark.dependency()
     @pytest.mark.xfail(reason="deliberate fail")
-    def test_unsuccessfull_login(self, setup_login_page):
+    def test_unsuccessful_login(self, setup_login_page):
         setup_login_page.login(TestData.USERNAME, TestData.WRONG_PASSWORD)
         assert False
 
@@ -25,13 +25,13 @@ class TestHome(BaseTest):
         header = setup_home_page.get_header_value()
         assert header == TestData.HOME_PAGE_HEADER
 
-    @pytest.mark.dependency(depends=['test_unsuccessfull_login'])
-    @pytest.mark.skip(reason="deliberate skip due to test_unsuccessfull_login")
+    @pytest.mark.dependency(depends=['test_unsuccessful_login'])
+    @pytest.mark.skip(reason="deliberate skip due to test_unsuccessful_login")
     def test_home_page_account_name(self, setup_home_page):
         account_name = setup_home_page.get_account_name_value()
         assert account_name == TestData.ACCOUNT_NAME
 
-    @pytest.mark.dependency(depends=['test_unsuccessfull_login'])
-    @pytest.mark.skip(reason="deliberate skip due to test_unsuccessfull_login")
+    @pytest.mark.dependency(depends=['test_unsuccessful_login'])
+    @pytest.mark.skip(reason="deliberate skip due to test_unsuccessful_login")
     def test_home_page_logout_button(self, setup_home_page):
         assert setup_home_page.is_logout_displayed()
