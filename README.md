@@ -30,8 +30,9 @@ Running the Tests Locally
 
 * Run all tests or a certain UI test, on a given environment:
 
-        pytest -v -s --html=.reports/POM-demo3.html --env PROD
-        pytest tests/login_page/test_login_page.py -v -s -nauto --html=.reports/POM-demo3.html --env QA --browser chrome
+        pytest -v -s --env PROD
+        pytest tests/login_page/test_login_page.py -v -s --env PROD
+        pytest tests/login_page/test_login_page.py -v -s -nauto --html=.reports/POM-demo3.html --capture=tee-sys --env QA --browser chrome
 
 * Run only 1 test on a specific browser: 
         
@@ -45,3 +46,11 @@ Running the Tests Locally
         
         pytest -v -m smoke
 
+* Run all tests on default environment (PROD) and default browser (chrome) and generate a html report:  
+        
+        pytest -v -s --html=.reports/POM-demo3.html --capture=tee-sys
+
+* Run parallel tests on default environment (PROD) and default browser (chrome) :  
+        
+        pytest tests/login_page/test_login_page.py -v -s -nauto
+        pytest tests/login_page/test_login_page.py -v -s -n 3
