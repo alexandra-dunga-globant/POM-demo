@@ -15,6 +15,10 @@ class TestHome(BaseTest):
         setup_login_page.login(TestData.USERNAME, TestData.WRONG_PASSWORD)
         assert False
 
+    def test_successful_login(self, setup_home_page):
+        account_name = setup_home_page.get_account_name_value()
+        assert account_name == TestData.ACCOUNT_NAME
+
     @pytest.mark.smoke
     def test_home_page_title(self, setup_home_page):
         title = setup_home_page.get_home_page_title(TestData.HOME_PAGE_TITLE)

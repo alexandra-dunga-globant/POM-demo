@@ -12,11 +12,11 @@ class TestData:
     # The values against we do ASSERTS in Test classes
 
     #Login page
-    LOGIN_PAGE_TITLE = "ToolsQA"
+    LOGIN_PAGE_TITLE = "DEMOQA"
     LOGIN_PAGE_HEADER = "Login"
 
     #Home page
-    HOME_PAGE_TITLE = "ToolsQA"
+    HOME_PAGE_TITLE = "DEMOQA"
     HOME_PAGE_HEADER = "Profile"
     ACCOUNT_NAME = "Alexandra"
 
